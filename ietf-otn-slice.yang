@@ -32,7 +32,7 @@
      import ietf-ns-topo {
        prefix "ns-topo";
        reference
-         "draft-ietf-teas-network-slice-topology-yang-00:
+         "draft-ietf-teas-network-slice-topology-yang-01:
           IETF Network Slice Topology YANG Data Model";
      }
       
@@ -75,11 +75,11 @@
         This version of this YANG module is part of RFC XXXX; see the
         RFC itself for full legal notices.";
 
-     revision "2024-07-07" {
+     revision "2025-07-03" {
        description
          "Latest revision of NBI YANG model for OTN slicing.";
        reference
-         "draft-ietf-ccamp-yang-otn-slicing-08: Framework and Data
+         "draft-ietf-ccamp-yang-otn-slicing-09: Framework and Data
           Model for OTN Network Slicing";
      }
 

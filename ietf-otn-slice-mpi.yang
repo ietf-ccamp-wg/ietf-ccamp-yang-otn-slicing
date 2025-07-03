@@ -25,15 +25,16 @@
      import ietf-otn-topology {
        prefix "otnt";
        reference
-         "I-D.ietf-ccamp-otn-topo-yang: A YANG Data Model
-          for Optical Transport Network Topology";
+         "draft-ietf-ccamp-otn-topo-yang-20:
+          RFC YYYY: A YANG Data Model for Optical Transport
+          Network Topology";
      }
 
      import ietf-layer1-types {
        prefix "l1-types";
        reference
-         "I-D.ietf-ccamp-layer1-types: A YANG Data Model
-          for Layer 1 Types";
+         "draft-ietf-ccamp-layer1-types-18:
+          RFC ZZZZ: A YANG Data Model for Layer 1 Types";
      }
 
      organization

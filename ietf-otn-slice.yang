@@ -18,22 +18,23 @@
      import ietf-layer1-types {
        prefix "l1-types";
        reference
-         "draft-ietf-ccamp-layer1-types-14: 
-          A YANG Data Model for Layer 1 Types";
+         "draft-ietf-ccamp-layer1-types-18: 
+          RFC ZZZZ: A YANG Data Model for Layer 1 Types";
      }
 
      import ietf-network-slice-service {
        prefix "ietf-nss";
        reference
          "draft-ietf-teas-ietf-network-slice-nbi-yang-25:
-          A YANG Data Model for the RFC 9543 Network Slice Service";
+          RFC VVVV: A YANG Data Model for the RFC 9543 Network Slice
+          Service";
      }
 
      import ietf-ns-topo {
        prefix "ns-topo";
        reference
          "draft-ietf-teas-network-slice-topology-yang-01:
-          IETF Network Slice Topology YANG Data Model";
+          RFC WWWW: IETF Network Slice Topology YANG Data Model";
      }
       
      organization

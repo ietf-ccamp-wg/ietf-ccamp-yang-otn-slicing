@@ -152,7 +152,7 @@ normative:
    | nw       | ietf-network-topology        | {{!RFC8345}}      |
    | tet      | ietf-te-topology             | {{!RFC8795}}      |
    | ietf-nss | ietf-network-slice-service   | \[RFCVVVV]        |
-   | te-types | ietf-te-types                | \[RFCWWWW]        |
+   | ns-topo  | ietf-ns-topo                 | \[RFCWWWW]        |
    | otnt     | ietf-otn-topology            | \[RFCYYYY]        |
    | l1-types | ietf-layer1-types            | \[RFCZZZZ]        |
    | otns     | ietf-otn-slice               | \[RFCXXXX]        |
@@ -161,7 +161,7 @@ normative:
 
 RFC Editor Note:
 Please replace VVVV with the RFC number assigned to {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}.
-Please replace WWWW with the RFC number assigned to {{!I-D.ietf-teas-rfc8776-update}}.
+Please replace WWWW with the RFC number assigned to {{!I-D.ietf-teas-network-slice-topology-yang}}.
 Please replace XXXX with the RFC number assigned to this document.
 Please replace YYYY with the RFC number assigned to {{!I-D.ietf-ccamp-otn-topo-yang}}.
 Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-types}}.

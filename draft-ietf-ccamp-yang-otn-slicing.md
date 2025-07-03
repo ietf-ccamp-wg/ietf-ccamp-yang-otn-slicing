@@ -4,7 +4,7 @@ coding: utf-8
 title: Framework and Data Model for OTN Network Slicing
 
 abbrev: Framework and YANG of OTN Slices
-docname: draft-ietf-ccamp-yang-otn-slicing-08
+docname: draft-ietf-ccamp-yang-otn-slicing-09
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
@@ -152,7 +152,7 @@ normative:
    | nw       | ietf-network-topology        | {{!RFC8345}}      |
    | tet      | ietf-te-topology             | {{!RFC8795}}      |
    | ietf-nss | ietf-network-slice-service   | \[RFCVVVV]        |
-   | te-types | ietf-te-types                | \[RFCWWWW]        |
+   | ns-topo  | ietf-ns-topo                 | \[RFCWWWW]        |
    | otnt     | ietf-otn-topology            | \[RFCYYYY]        |
    | l1-types | ietf-layer1-types            | \[RFCZZZZ]        |
    | otns     | ietf-otn-slice               | \[RFCXXXX]        |
@@ -160,8 +160,8 @@ normative:
 {: #tab-prefixes title="Prefixes and Corresponding YANG Modules"}
 
 RFC Editor Note:
-Please replace VVVV with the RFC number assigned to {{?I-D.ietf-teas-ietf-network-slice-nbi-yang}}.
-Please replace WWWW with the RFC number assigned to {{?I-D.ietf-teas-rfc8776-update}}.
+Please replace VVVV with the RFC number assigned to {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}.
+Please replace WWWW with the RFC number assigned to {{!I-D.ietf-teas-network-slice-topology-yang}}.
 Please replace XXXX with the RFC number assigned to this document.
 Please replace YYYY with the RFC number assigned to {{!I-D.ietf-ccamp-otn-topo-yang}}.
 Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-types}}.
@@ -173,10 +173,10 @@ Please remove this note.
    satisfy specific service level objectives (SLOs).
 
    An OTN slice is a technology-specific realization of the RFC 9543 network slice service 
-   {{!RFC9543}} in the OTN domain, with the
+   {{?RFC9543}} in the OTN domain, with the
    capability of configuring slice resources in the term of OTN technologies. 
    Therefore, all the terms and definitions concerning network slicing as 
-   defined in {{!RFC9543}} apply to OTN slicing.
+   defined in {{?RFC9543}} apply to OTN slicing.
    
    An OTN slice can span multiple OTN administrative domains, encompassing 
    access links, intra-domain paths, and inter-domain links. 
@@ -386,9 +386,9 @@ shall support configuring an OTN slice with both options.
    
    Option 2\[opt.2]: An IETF NSC receives a technology-agnostic slice request from the IETF NSC NBI and delegates the
    request to the OTN-SC through the OTN-SC NBI, which is OTN technology specific. The OTN-SC in turn realizes the slice in single or multi domain OTN networks by working with the underlying PNC or MDSC. In this option, the OTN-SC is considered as a realization of IETF NSC, i.e.,
-   an NS realizer as per {{!I-D.draft-contreras-teas-slice-controller-models}},
+   an NS realizer as per {{!I-D.ietf-teas-ns-controller-models}},
    when the underlying network is OTN. The OTN-SC is also a subordinate slice controller of the RFC 9543 NSC, which 
-   is consistent with the hierarchical control of slices specified by {{!RFC9543}}.
+   is consistent with the hierarchical control of slices specified by {{?RFC9543}}.
    
    Option 3\[opt.3]: An OTN-aware orchestrator may request an OTN technology-specific slice with OTN-specific SLOs through the 
    OTN-SC NBI to the OTN-SC. The OTN-SC in turn realizes the slice in single or multi domain OTN networks by working with the underlying PNC or MDSC
@@ -474,7 +474,7 @@ shall support configuring an OTN slice with both options.
 
 # Realizing OTN Slices
 
-{{!RFC9543}} introduces a mechanism for an RFC 9543 network slice controller to realize network slices by constructing Network Resource Partitions (NRP). A NRP is a collection of resources identified in the underlay network to facilitate the mapping of network slices onto available network resources. An NRP is a scope view of a topology and may be considered as a topology in its own right. Thus, in traffic-engineered (TE) networks including OTN, an NRP may be simply represented as an abstract TE topology defined by {{!RFC8795}}. For OTN networks, An NRP may be represented as an abstract OTN topology defined by {{!I-D.ietf-ccamp-otn-topo-yang}}.
+{{?RFC9543}} introduces a mechanism for an RFC 9543 network slice controller to realize network slices by constructing Network Resource Partitions (NRP). A NRP is a collection of resources identified in the underlay network to facilitate the mapping of network slices onto available network resources. An NRP is a scope view of a topology and may be considered as a topology in its own right. Thus, in traffic-engineered (TE) networks including OTN, an NRP may be simply represented as an abstract TE topology defined by {{!RFC8795}}. For OTN networks, An NRP may be represented as an abstract OTN topology defined by {{!I-D.ietf-ccamp-otn-topo-yang}}.
 
 The NRP may be used to address the scalability issues where there may be considerable numbers of control and data plane states required to be stored and programmed if network slices are mapped directly to the underlay topology. NRP is internal to a network slice controller, and use of NRPs is optional yet could benefit a network slice realization in large-scale networks, including OTN networks. 
 
@@ -482,7 +482,7 @@ For connectivity-based OTN slices, a connection within an OTN slice is typically
 
 For resource-based OTN slices, the OTN-SC may map an OTN slice directly onto the underlay TE topology presented by the subtended network controller (MDSC or PNC) without creating NRP topologies. Due to the need for reserving resources, the OTN-SC needs to color corresponding link resources of the underlay topology with a slice identifier and maintain the coloring to keep track of the mapping of OTN slices. The OTN-SC may push the colored topology to the subtended MDSC or PNC using the MPI model defined in this draft.
 
-Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE topology on top of the underlay topology. The corresponding link resources allocated to the slice is encapsulated in and tracked by the abstract topology, and a given link or port in the NRP topology represents resources that are reserved in the underlay topology. Multiple OTN slices may be mapped to the same NRP, and a single connectivity construct of the slice may be mapped to only one NRP, as per {{!RFC9543}}. The resources of an NRP topology are reserved and shared by all the OTN slices mapped to this NRP, and the NRP topology may be pushed directly to the subtended MDSC or PNC, thus eliminating the need for link coloring if using the underlay topology.
+Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE topology on top of the underlay topology. The corresponding link resources allocated to the slice is encapsulated in and tracked by the abstract topology, and a given link or port in the NRP topology represents resources that are reserved in the underlay topology. Multiple OTN slices may be mapped to the same NRP, and a single connectivity construct of the slice may be mapped to only one NRP, as per {{?RFC9543}}. The resources of an NRP topology are reserved and shared by all the OTN slices mapped to this NRP, and the NRP topology may be pushed directly to the subtended MDSC or PNC, thus eliminating the need for link coloring if using the underlay topology.
 
 {{fig-otn-sc-nrp}} illustrates the relationship between OTN slices and NRP.
 
@@ -557,7 +557,7 @@ Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE
 ### MPI YANG Code
 
 ~~~~
-   <CODE BEGINS> file "ietf-otn-slice-mpi@2024-07-07.yang"
+   <CODE BEGINS> file "ietf-otn-slice-mpi@2025-07-03.yang"
 {::include ./ietf-otn-slice-mpi.yang}
    <CODE ENDS>
 ~~~~
@@ -569,7 +569,7 @@ Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE
 
    The YANG model for OTN-SC NBI is OTN-technology specific, but shares many
    common constructs and attributes with the common network slicing YANG model
-   defined in {{?I-D.ietf-teas-ietf-network-slice-nbi-yang}}. Furthermore, the 
+   defined in {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}. Furthermore, the 
    OTN-SC NBI YANG is expected to support both connectivity-based
    and resource-based slice configuration, which is likely a common requirement for
    supporting slicing at other transport network layers, e.g. WDM or MPLS(-TP).
@@ -594,7 +594,7 @@ Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE
 ### NBI YANG Code for OTN Slice
 
 ~~~~
-   <CODE BEGINS> file "ietf-otn-slice@2024-07-07.yang"
+   <CODE BEGINS> file "ietf-otn-slice@2025-07-03.yang"
 {::include ./ietf-otn-slice.yang}
    <CODE ENDS>
 ~~~~

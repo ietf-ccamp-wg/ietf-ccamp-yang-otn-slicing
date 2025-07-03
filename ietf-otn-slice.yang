@@ -25,15 +25,15 @@
      import ietf-network-slice-service {
        prefix "ietf-nss";
        reference
-         "draft-ietf-teas-ietf-network-slice-nbi-yang-05:
-          IETF Network Slice Service YANG Model";
+         "draft-ietf-teas-ietf-network-slice-nbi-yang-25:
+          A YANG Data Model for the RFC 9543 Network Slice Service";
      }
 
      import ietf-ns-topo {
        prefix "ns-topo";
        reference
-         "draft-liu-teas-transport-network-slice-yang-06:
-          IETF Network Slice YANG Model";
+         "draft-ietf-teas-network-slice-topology-yang-00:
+          IETF Network Slice Topology YANG Data Model";
      }
       
      organization

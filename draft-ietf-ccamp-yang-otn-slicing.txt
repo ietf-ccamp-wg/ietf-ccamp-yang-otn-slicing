@@ -5,7 +5,7 @@
 CCAMP Working Group                                               A. Guo
 Internet-Draft                                    Futurewei Technologies
 Intended status: Standards Track                          L.M. Contreras
-Expires: 15 July 2025                                         Telefonica
+Expires: 4 January 2026                                       Telefonica
                                                               S. Belotti
                                                                    Nokia
                                                                 R. Rokui
@@ -16,11 +16,11 @@ Expires: 15 July 2025                                         Telefonica
                                                             China Mobile
                                                                   X. Liu
                                                                Alef Edge
-                                                         11 January 2025
+                                                             3 July 2025
 
 
             Framework and Data Model for OTN Network Slicing
-                  draft-ietf-ccamp-yang-otn-slicing-08
+                  draft-ietf-ccamp-yang-otn-slicing-09
 
 Abstract
 
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 1]
+Guo, et al.              Expires 4 January 2026                 [Page 1]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    Internet-Drafts are draft documents valid for a maximum of six months
@@ -63,7 +63,7 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 July 2025.
+   This Internet-Draft will expire on 4 January 2026.
 
 Copyright Notice
 
@@ -105,18 +105,16 @@ Table of Contents
    6.  Manageability Considerations  . . . . . . . . . . . . . . . .  28
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  28
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  29
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  29
+   9.  Normative References  . . . . . . . . . . . . . . . . . . . .  29
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 2]
+Guo, et al.              Expires 4 January 2026                 [Page 2]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  30
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .  32
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  33
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  32
    Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  33
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
 
@@ -165,9 +163,11 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 3]
+
+
+Guo, et al.              Expires 4 January 2026                 [Page 3]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
            +==========+============================+===========+
@@ -221,9 +221,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 4]
+Guo, et al.              Expires 4 January 2026                 [Page 4]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    An OTN slice can span multiple OTN administrative domains,
@@ -277,9 +277,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 5]
+Guo, et al.              Expires 4 January 2026                 [Page 5]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
 2.1.  Leased Line Services with OTN
@@ -333,9 +333,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 6]
+Guo, et al.              Expires 4 January 2026                 [Page 6]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    qualitatively isolated from each other to meet the requirements for
@@ -389,9 +389,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 7]
+Guo, et al.              Expires 4 January 2026                 [Page 7]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
 3.  Framework for OTN slicing
@@ -445,9 +445,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 8]
+Guo, et al.              Expires 4 January 2026                 [Page 8]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    domain links.  In some real network scenarios, OTN network resources
@@ -501,9 +501,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                  [Page 9]
+Guo, et al.              Expires 4 January 2026                 [Page 9]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    An OTN slice may be realized by using standard MPI interfaces,
@@ -557,9 +557,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 10]
+Guo, et al.              Expires 4 January 2026                [Page 10]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    OTN-SC functionalities may be recursive such that a higher-level OTN-
@@ -613,9 +613,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 11]
+Guo, et al.              Expires 4 January 2026                [Page 11]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    traffic-engineered (TE) networks including OTN, an NRP may be simply
@@ -669,9 +669,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 12]
+Guo, et al.              Expires 4 January 2026                [Page 12]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
            /---------------/      |            /---------------/
@@ -725,9 +725,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 13]
+Guo, et al.              Expires 4 January 2026                [Page 13]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
 5.  YANG Data Model for OTN Slicing Configuration
@@ -781,9 +781,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 14]
+Guo, et al.              Expires 4 January 2026                [Page 14]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
 5.1.3.  MPI YANG Code
@@ -837,9 +837,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 15]
+Guo, et al.              Expires 4 January 2026                [Page 15]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
                    <mailto:zhenghaomian@huawei.com>
@@ -893,9 +893,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 16]
+Guo, et al.              Expires 4 January 2026                [Page 16]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
             description
@@ -949,9 +949,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 17]
+Guo, et al.              Expires 4 January 2026                [Page 17]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
                 }
@@ -1005,9 +1005,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 18]
+Guo, et al.              Expires 4 January 2026                [Page 18]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
 5.2.2.  NBI YANG Model Tree for OTN slice
@@ -1061,9 +1061,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 19]
+Guo, et al.              Expires 4 January 2026                [Page 19]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
           +--rw odulist* [odu-type]
@@ -1117,9 +1117,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 20]
+Guo, et al.              Expires 4 January 2026                [Page 20]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
           |     +--rw duration        identityref
@@ -1173,9 +1173,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 21]
+Guo, et al.              Expires 4 January 2026                [Page 21]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
              A YANG Data Model for Layer 1 Types";
@@ -1184,15 +1184,15 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
         import ietf-network-slice-service {
           prefix "ietf-nss";
           reference
-            "draft-ietf-teas-ietf-network-slice-nbi-yang-05:
-             IETF Network Slice Service YANG Model";
+            "draft-ietf-teas-ietf-network-slice-nbi-yang-25:
+             A YANG Data Model for the RFC 9543 Network Slice Service";
         }
 
         import ietf-ns-topo {
           prefix "ns-topo";
           reference
-            "draft-liu-teas-transport-network-slice-yang-06:
-             IETF Network Slice YANG Model";
+            "draft-ietf-teas-network-slice-topology-yang-00:
+             IETF Network Slice Topology YANG Data Model";
         }
 
         organization
@@ -1229,9 +1229,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 22]
+Guo, et al.              Expires 4 January 2026                [Page 22]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
            to the license terms contained in, the Revised BSD License
@@ -1285,9 +1285,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 23]
+Guo, et al.              Expires 4 January 2026                [Page 23]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
         identity odu-uas {
@@ -1341,9 +1341,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 24]
+Guo, et al.              Expires 4 January 2026                [Page 24]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
                 description
@@ -1397,9 +1397,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 25]
+Guo, et al.              Expires 4 January 2026                [Page 25]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
         /* slice augments */
@@ -1453,9 +1453,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 26]
+Guo, et al.              Expires 4 January 2026                [Page 26]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
           when "../../../../nw:network-types/ns-topo:network-slice" {
@@ -1509,9 +1509,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 27]
+Guo, et al.              Expires 4 January 2026                [Page 27]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
              specific SLO/SLE policy for connectivity-constructs within
@@ -1565,9 +1565,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 28]
+Guo, et al.              Expires 4 January 2026                [Page 28]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    The NETCONF access control model [RFC8341] provides the means to
@@ -1617,16 +1617,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
       prefix: otns-mpi
       reference: RFC XXXX
 
-9.  References
+9.  Normative References
 
 
 
-Guo, et al.               Expires 15 July 2025                 [Page 29]
+Guo, et al.              Expires 4 January 2026                [Page 29]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
-
-9.1.  Normative References
 
    [I-D.draft-contreras-teas-slice-controller-models]
               Contreras, L. M., Rokui, R., Tantsura, J., Wu, B., Liu,
@@ -1652,13 +1650,37 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
               otn-topo-yang-20>.
 
+   [I-D.ietf-teas-ietf-network-slice-nbi-yang]
+              Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
+              "A YANG Data Model for the RFC 9543 Network Slice
+              Service", Work in Progress, Internet-Draft, draft-ietf-
+              teas-ietf-network-slice-nbi-yang-25, 9 May 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              ietf-network-slice-nbi-yang-25>.
+
+   [I-D.ietf-teas-rfc8776-update]
+              Busi, I., Guo, A., Liu, X., Saad, T., and I. Bryskin,
+              "Common YANG Data Types for Traffic Engineering", Work in
+              Progress, Internet-Draft, draft-ietf-teas-rfc8776-update-
+              17, 21 February 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              rfc8776-update-17>.
+
    [I-D.ietf-teas-yang-te]
               Saad, T., Gandhi, R., Liu, X., Beeram, V. P., and I.
               Bryskin, "A YANG Data Model for Traffic Engineering
               Tunnels, Label Switched Paths and Interfaces", Work in
-              Progress, Internet-Draft, draft-ietf-teas-yang-te-37, 9
-              October 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-teas-yang-te-37>.
+              Progress, Internet-Draft, draft-ietf-teas-yang-te-38, 29
+              May 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-teas-yang-te-38>.
+
+
+
+
+Guo, et al.              Expires 4 January 2026                [Page 30]
+
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
+
 
    [ITU-T-G.8201-Amd.1]
               ITU Telecommunication Standardization Sector (ITU-T),
@@ -1671,16 +1693,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
-
-
-
-
-
-
-Guo, et al.               Expires 15 July 2025                 [Page 30]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
-
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
@@ -1716,6 +1728,16 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/info/rfc8040>.
 
+
+
+
+
+
+Guo, et al.              Expires 4 January 2026                [Page 31]
+
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
+
+
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
@@ -1729,14 +1751,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
               Ananthakrishnan, H., and X. Liu, "A YANG Data Model for
               Network Topologies", RFC 8345, DOI 10.17487/RFC8345, March
               2018, <https://www.rfc-editor.org/info/rfc8345>.
-
-
-
-
-Guo, et al.               Expires 15 July 2025                 [Page 31]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
-
 
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
@@ -1767,36 +1781,18 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
               2018, <http://ftp.3gpp.org//Specs/
               archive/28_series/28.530/28530-f10.zip>.
 
-9.2.  Informative References
-
-   [I-D.ietf-teas-ietf-network-slice-nbi-yang]
-              Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
-              "A YANG Data Model for the RFC 9543 Network Slice
-              Service", Work in Progress, Internet-Draft, draft-ietf-
-              teas-ietf-network-slice-nbi-yang-17, 20 December 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              ietf-network-slice-nbi-yang-17>.
-
-   [I-D.ietf-teas-rfc8776-update]
-              Busi, I., Guo, A., Liu, X., Saad, T., and I. Bryskin,
-              "Common YANG Data Types for Traffic Engineering", Work in
-              Progress, Internet-Draft, draft-ietf-teas-rfc8776-update-
-              14, 4 November 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              rfc8776-update-14>.
-
-
-
-
-
-Guo, et al.               Expires 15 July 2025                 [Page 32]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
-
-
 Acknowledgments
 
    This document was prepared using kramdown.
+
+
+
+
+
+Guo, et al.              Expires 4 January 2026                [Page 32]
+
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
+
 
    Previous versions of this document were prepared using 2-Word-
    v2.0.template.dot.
@@ -1840,20 +1836,18 @@ Contributors
    Email: Dieter.Beller@nokia.com
 
 
-
-
-
-
-
-Guo, et al.               Expires 15 July 2025                 [Page 33]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
-
-
    Henry Yu
    Huawei Technologies Canada
 
    Email: henry.yu@huawei.com
+
+
+
+
+
+Guo, et al.              Expires 4 January 2026                [Page 33]
+
+Internet-Draft      Framework and YANG of OTN Slices           July 2025
 
 
    Jiang Sun
@@ -1900,12 +1894,6 @@ Authors' Addresses
    Email: zhaoyangyjy@chinamobile.com
 
 
-
-Guo, et al.               Expires 15 July 2025                 [Page 34]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2025
-
-
    Xufeng Liu
    Alef Edge
 
@@ -1913,48 +1901,4 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2025
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Guo, et al.               Expires 15 July 2025                 [Page 35]
+Guo, et al.              Expires 4 January 2026                [Page 34]

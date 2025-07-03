@@ -4,7 +4,7 @@ coding: utf-8
 title: Framework and Data Model for OTN Network Slicing
 
 abbrev: Framework and YANG of OTN Slices
-docname: draft-ietf-ccamp-yang-otn-slicing-08
+docname: draft-ietf-ccamp-yang-otn-slicing-09
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
@@ -160,8 +160,8 @@ normative:
 {: #tab-prefixes title="Prefixes and Corresponding YANG Modules"}
 
 RFC Editor Note:
-Please replace VVVV with the RFC number assigned to {{?I-D.ietf-teas-ietf-network-slice-nbi-yang}}.
-Please replace WWWW with the RFC number assigned to {{?I-D.ietf-teas-rfc8776-update}}.
+Please replace VVVV with the RFC number assigned to {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}.
+Please replace WWWW with the RFC number assigned to {{!I-D.ietf-teas-rfc8776-update}}.
 Please replace XXXX with the RFC number assigned to this document.
 Please replace YYYY with the RFC number assigned to {{!I-D.ietf-ccamp-otn-topo-yang}}.
 Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-types}}.
@@ -569,7 +569,7 @@ Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE
 
    The YANG model for OTN-SC NBI is OTN-technology specific, but shares many
    common constructs and attributes with the common network slicing YANG model
-   defined in {{?I-D.ietf-teas-ietf-network-slice-nbi-yang}}. Furthermore, the 
+   defined in {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}. Furthermore, the 
    OTN-SC NBI YANG is expected to support both connectivity-based
    and resource-based slice configuration, which is likely a common requirement for
    supporting slicing at other transport network layers, e.g. WDM or MPLS(-TP).

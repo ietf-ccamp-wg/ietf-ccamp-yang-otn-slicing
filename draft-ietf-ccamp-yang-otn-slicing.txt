@@ -5,7 +5,7 @@
 CCAMP Working Group                                               A. Guo
 Internet-Draft                                    Futurewei Technologies
 Intended status: Standards Track                          L.M. Contreras
-Expires: 10 July 2026                                         Telefonica
+Expires: 30 August 2026                                       Telefonica
                                                               S. Belotti
                                                                    Nokia
                                                                 R. Rokui
@@ -16,7 +16,7 @@ Expires: 10 July 2026                                         Telefonica
                                                             China Mobile
                                                                   X. Liu
                                                                Alef Edge
-                                                          6 January 2026
+                                                        26 February 2026
 
 
             Framework and Data Model for OTN Network Slicing
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Guo, et al.               Expires 10 July 2026                  [Page 1]
+Guo, et al.              Expires 30 August 2026                 [Page 1]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    Internet-Drafts are draft documents valid for a maximum of six months
@@ -63,7 +63,7 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 July 2026.
+   This Internet-Draft will expire on 30 August 2026.
 
 Copyright Notice
 
@@ -85,7 +85,7 @@ Table of Contents
      1.1.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   3
      1.2.  Prefixes in Data Node Names . . . . . . . . . . . . . . .   3
      1.3.  Definition of OTN Slice . . . . . . . . . . . . . . . . .   4
-   2.  Use Cases for OTN Network Slicing . . . . . . . . . . . . . .   5
+   2.  Use Cases for OTN Network Slicing . . . . . . . . . . . . . .   6
      2.1.  Leased Line Services with OTN . . . . . . . . . . . . . .   6
      2.2.  Co-construction and Sharing . . . . . . . . . . . . . . .   6
      2.3.  Wholesale of optical resources  . . . . . . . . . . . . .   6
@@ -97,25 +97,25 @@ Table of Contents
      5.1.  OTN Slicing YANG Model for MPI  . . . . . . . . . . . . .  14
        5.1.1.  MPI YANG Model Overview . . . . . . . . . . . . . . .  14
        5.1.2.  MPI YANG Model Tree . . . . . . . . . . . . . . . . .  14
-       5.1.3.  MPI YANG Code . . . . . . . . . . . . . . . . . . . .  15
+       5.1.3.  MPI YANG Code . . . . . . . . . . . . . . . . . . . .  14
      5.2.  OTN Slicing YANG Model for OTN-SC NBI . . . . . . . . . .  18
        5.2.1.  NBI YANG Model Overview . . . . . . . . . . . . . . .  18
-       5.2.2.  NBI YANG Model Tree for OTN slice . . . . . . . . . .  19
+       5.2.2.  NBI YANG Model Tree for OTN slice . . . . . . . . . .  18
        5.2.3.  NBI YANG Code for OTN Slice . . . . . . . . . . . . .  21
    6.  Manageability Considerations  . . . . . . . . . . . . . . . .  28
-   7.  Security Considerations . . . . . . . . . . . . . . . . . . .  29
+   7.  Security Considerations . . . . . . . . . . . . . . . . . . .  28
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  29
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  30
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  29
 
 
 
-Guo, et al.               Expires 10 July 2026                  [Page 2]
+Guo, et al.              Expires 30 August 2026                 [Page 2]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  30
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .  33
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  29
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .  32
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  33
    Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  33
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
@@ -165,9 +165,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                  [Page 3]
+Guo, et al.              Expires 30 August 2026                 [Page 3]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
            +==========+============================+===========+
@@ -209,22 +209,28 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 1.3.  Definition of OTN Slice
 
-   An OTN slice is an OTN virtual network topology connecting a number
-   of OTN endpoints using a set of shared or dedicated OTN network
-   resources to satisfy specific service level objectives (SLOs).
+   An OTN slice is an an RFC 9543 Network Slice connecting a number of
+   OTN endpoints using a set of shared or dedicated OTN network
+   resources to satisfy specific service level objectives (SLOs) and
+   Service Level Expectations (SLEs).
+
+
+
+
+
+
+
+
+Guo, et al.              Expires 30 August 2026                 [Page 4]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
    An OTN slice is a technology-specific realization of the RFC 9543
    network slice service [RFC9543] in the OTN domain, with the
    capability of configuring slice resources in the term of OTN
    technologies.  Therefore, all the terms and definitions concerning
    network slicing as defined in [RFC9543] apply to OTN slicing.
-
-
-
-Guo, et al.               Expires 10 July 2026                  [Page 4]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
 
    An OTN slice can span multiple OTN administrative domains,
    encompassing access links, intra-domain paths, and inter-domain
@@ -268,19 +274,15 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    slice is provided by a service provider to a customer to be used as
    though it was part of the customer's own networks.
 
-2.  Use Cases for OTN Network Slicing
 
 
 
-
-
-
-
-
-Guo, et al.               Expires 10 July 2026                  [Page 5]
+Guo, et al.              Expires 30 August 2026                 [Page 5]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
+
+2.  Use Cases for OTN Network Slicing
 
 2.1.  Leased Line Services with OTN
 
@@ -328,16 +330,16 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    each other to achieve better network utilization efficiency.  From
    the perspective of a resource provider, it is crucial that a network
    slice is timely configured to meet traffic matrix requirements
+
+
+
+Guo, et al.              Expires 30 August 2026                 [Page 6]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
    requested by its tenants.  The support for multi-tenancy within the
    resource provider's network demands that the network slices are
-
-
-
-Guo, et al.               Expires 10 July 2026                  [Page 6]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
    qualitatively isolated from each other to meet the requirements for
    transparency, non-interference, and security.  Typically, a resource
    purchaser expects to use the leased network resources flexibly, just
@@ -387,11 +389,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-
-
-Guo, et al.               Expires 10 July 2026                  [Page 7]
+Guo, et al.              Expires 30 August 2026                 [Page 7]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 3.  Framework for OTN slicing
@@ -402,20 +402,20 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    between specified endpoints, an OTN slice can be abstracted as a set
    of endpoint-to-endpoint links, with each link formed by an end-to-end
    tunnel across the underlying OTN networks.  The resources associated
-   with each link of the slice is reserved and commissioned in the
+   with each link of the slice are reserved and commissioned in the
    underlying physical network upon the completion of configuring the
    OTN slice and all the links are active.
 
    An OTN slice can also be abstracted as an abstract topology when the
    customer requests the slice to share resources between multiple
    endpoints and to use the resources on demand.  The abstract topology
-   may consist of virtual nodes and virtual links, and their associated
-   resources are reserved but not commissioned across the underlying OTN
-   networks.  The customer can later commission resources within the
-   slice dynamically using the NBI provided by the service provider.  An
-   OTN slice could use abstract topology to connect endpoints with
-   shared resources to optimize the resource utilization, and
-   connections can be activated within the slice as needed.
+   may consist of virtual nodes and virtual links[RFC9731], and their
+   associated resources are reserved but not commissioned across the
+   underlying OTN networks.  The customer can later commission resources
+   within the slice dynamically using the NBI provided by the service
+   provider.  An OTN slice could use abstract topology to connect
+   endpoints with shared resources to optimize the resource utilization,
+   and connections can be activated within the slice as needed.
 
    It is worth noting that those means to abstract an OTN slice are
    similar to the Virtual Network (VN) abstraction defined for higher-
@@ -445,9 +445,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                  [Page 8]
+Guo, et al.              Expires 30 August 2026                 [Page 8]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    domain links.  In some real network scenarios, OTN network resources
@@ -501,9 +501,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                  [Page 9]
+Guo, et al.              Expires 30 August 2026                 [Page 9]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    An OTN slice may be realized by using standard MPI interfaces,
@@ -557,9 +557,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                 [Page 10]
+Guo, et al.              Expires 30 August 2026                [Page 10]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    OTN-SC functionalities may be recursive such that a higher-level OTN-
@@ -613,9 +613,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                 [Page 11]
+Guo, et al.              Expires 30 August 2026                [Page 11]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    traffic-engineered (TE) networks including OTN, an NRP may be simply
@@ -623,12 +623,16 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    networks, An NRP may be represented as an abstract OTN topology
    defined by [I-D.ietf-ccamp-otn-topo-yang].
 
-   The NRP may be used to address the scalability issues where there may
-   be considerable numbers of control and data plane states required to
-   be stored and programmed if network slices are mapped directly to the
-   underlay topology.  NRP is internal to a network slice controller,
-   and use of NRPs is optional yet could benefit a network slice
-   realization in large-scale networks, including OTN networks.
+   The NRP can be used to address scalability challenges that arise when
+   network slices are mapped directly onto the underlay topology, where
+   a large number of control-plane and data-plane states may otherwise
+   need to be instantiated and maintained for each slice.  An NRP is
+   internal to the network slice controller, and its use is optional and
+   particularly in OTN transport networks, where resources are already
+   physically partitioned into time slots with corarse granularity than
+   the resources considered in L2-L3 networks.  Nevertheless, NRPs can
+   provide significant benefits for slice realization in large-scale
+   environments, including also OTN networks.
 
    For connectivity-based OTN slices, a connection within an OTN slice
    is typically realized by an OTN tunnel in the underlay topology and
@@ -636,26 +640,28 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    this case.
 
    For resource-based OTN slices, the OTN-SC may map an OTN slice
-   directly onto the underlay TE topology presented by the subtended
-   network controller (MDSC or PNC) without creating NRP topologies.
-   Due to the need for reserving resources, the OTN-SC needs to color
-   corresponding link resources of the underlay topology with a slice
-   identifier and maintain the coloring to keep track of the mapping of
-   OTN slices.  The OTN-SC may push the colored topology to the
-   subtended MDSC or PNC using the MPI model defined in this draft.
+   directly onto the underlay TE topology exposed by the subtended
+   controller (MDSC or PNC) without creating separate NRP topology
+   instances.  In this case, the OTN-SC configures NRP identifiers on
+   the relevant underlay link resources.  A NRP identifier represents a
+   resource partition with ODU time slots for tracking slice resource
+   associations.  The OTN-SC may then push the topology with configured
+   NRP identifiers to the subtended MDSC or PNC using the MPI model
+   defined in this draft, and subsequently instantiate TE tunnels with
+   the appropriate NRP identifier.
 
-   Alternatively, an OTN slice may be mapped to a NRP as an overlay
-   abstract OTN TE topology on top of the underlay topology.  The
-   corresponding link resources allocated to the slice is encapsulated
-   in and tracked by the abstract topology, and a given link or port in
-   the NRP topology represents resources that are reserved in the
-   underlay topology.  Multiple OTN slices may be mapped to the same
-   NRP, and a single connectivity construct of the slice may be mapped
-   to only one NRP, as per [RFC9543].  The resources of an NRP topology
-   are reserved and shared by all the OTN slices mapped to this NRP, and
-   the NRP topology may be pushed directly to the subtended MDSC or PNC,
-   thus eliminating the need for link coloring if using the underlay
-   topology.
+   Alternatively, an OTN slice may be mapped to an NRP as an overlay
+   abstract OTN TE topology on the underlay topology.  In this model,
+   the link resources allocated to the slice are encapsulated and
+   tracked within the abstract NRP topology.  Each link or port in the
+   NRP topology corresponds to resources reserved in the underlay
+   topology.  Multiple OTN slices may be mapped to the same NRP, while
+   any individual connectivity construct of a slice is mapped to only
+   one NRP, as per [RFC9543].  The resources of an NRP topology are
+   reserved and shared among all OTN slices mapped to that NRP.  The NRP
+   topology may be pushed directly to the subtended MDSC or PNC,
+   eliminating the need for configuring NRP identifiers when operating
+   on the underlay topology.
 
    Figure 4 illustrates the relationship between OTN slices and NRP.
 
@@ -663,15 +669,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-
-
-
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 12]
+Guo, et al.              Expires 30 August 2026                [Page 12]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
            /---------------/      |            /---------------/
@@ -725,9 +725,9 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                 [Page 13]
+Guo, et al.              Expires 30 August 2026                [Page 13]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 5.  YANG Data Model for OTN Slicing Configuration
@@ -737,19 +737,19 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 5.1.1.  MPI YANG Model Overview
 
    For the configuration of connectivity-based OTN slices, existing
-   models such as the TE tunnel interface [I-D.ietf-teas-yang-te] may be
-   used and no addition is needed.  This model is addressing the case
-   for configuring resource-based OTN slices, where the model permits to
-   reserve resources exploiting the common knowledge of an underlying
-   virtual topology between the OTN-SC and the subtended network
-   controller (MDSC or PNC).  The slice is configured by marking
-   corresponding link resources on the TE topology received from the
-   underlying MDSC or PNC with a slice identifier and OTN-specific
-   resource requirements, e.g. the number of ODU time slots or the type/
-   number of ODU containers.  The MDSC or PNC, based on the marked
-   resources by the OTN-SC, will update the underlying TE topology with
-   new TE link for each of the colored links to keep booked the reserved
-   OTN resources e.g. time slots or ODU containers.
+   models such as the TE Tunnel Interface [I-D.ietf-teas-yang-te] may be
+   used, and no additional modeling is required.  The model defined in
+   this draft addresses the configuration of resource-based OTN slices,
+   where the OTN-SC and the subtended network controller (MDSC or PNC)
+   share a common knowledge of the underlying virtual TE topology.  In
+   this case, the slice is configured by marking the relevant link
+   resources on the TE topology received from the MDSC or PNC with an
+   NRP identifier and OTN-specific resource attributes, such as the
+   number of ODU time slots or the type and quantity of ODU containers.
+   Based on the resources marked by the OTN-SC, the MDSC or PNC updates
+   the underlay TE topology by creating new TE links corresponding to
+   the reserved OTN resources, e.g., time slots or ODU containers, and
+   keeping those resources booked for the slice.
 
 5.1.2.  MPI YANG Model Tree
 
@@ -757,36 +757,34 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
      augment /nw:networks/nw:network/nt:link/tet:te
                /tet:te-link-attributes:
-       +--rw (otn-slice-granularity)?
+       +--rw (otn-nrp-granularity)?
           +--:(link)
-          |  +--rw slice-id?   uint32
+          |  +--rw nrp-id?   uint32
           +--:(link-resource)
-             +--rw slices* [slice-id]
-                +--rw slice-id                  uint32
+             +--rw nrps* [nrp-id]
+                +--rw nrp-id                    uint32
                 +--rw (technology)?
-                |  +--:(otn)
-                |     +--rw (slice-bandwidth)?
-                |        +--:(containers)
-                |        |  +--rw odulist* [odu-type]
-                |        |     +--rw odu-type    identityref
-                |        |     +--rw number?     uint16
-                |        +--:(time-slots)
-                |           +--rw otn-ts-num?   uint32
-                +--ro sliced-link-ref?
-                        -> ../../../../../nt:link/link-id
+                   +--:(otn)
+                      +--rw (nrp-bandwidth)?
+                         +--:(containers)
+                         |  +--rw odulist* [odu-type]
+                         |     +--rw odu-type    identityref
+                         |     +--rw number?     uint16
+                         +--:(time-slots)
+                            +--rw otn-ts-num?   uint32
 
                    Figure 5: OTN slicing MPI tree diagram
 
-
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 14]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
 5.1.3.  MPI YANG Code
+
+
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 14]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
    <CODE BEGINS> file "ietf-otn-slice-mpi@2025-07-03.yang"
       module ietf-otn-slice-mpi {
@@ -834,16 +832,15 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
           "WG Web: <http://tools.ietf.org/wg/ccamp/>
            WG List: <mailto:ccamp@ietf.org>
 
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 15]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
            Editor: Haomian Zheng
                    <mailto:zhenghaomian@huawei.com>
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 15]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
            Editor: Italo Busi
                    <mailto:italo.busi@huawei.com>
@@ -886,45 +883,45 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
          * Groupings
          */
 
-        grouping otn-link-slice-profile {
+        grouping otn-link-nrp-profile {
           description
-            "Profile of an OTN link slice.";
-          choice otn-slice-granularity {
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 16]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
+            "Profile of an OTN link Network Resource Partition (NRP).";
+          choice otn-nrp-granularity {
             default "link";
             description
-              "Link slice granularity.";
+              "Link nrp granularity.";
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 16]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
             case link {
-              leaf slice-id {
+              leaf nrp-id {
                 type uint32;
                  description
-                   "Slice identifier";
+                   "NRP identifier";
               }
             }
             case link-resource {
-              list slices {
-                key slice-id;
+              list nrps {
+                key nrp-id;
                 description
-                  "List of slices.";
-                leaf slice-id {
+                  "List of NRPs.";
+                leaf nrp-id {
                   type uint32;
                   description
-                    "Slice identifier";
+                    "NRP identifier";
                 }
                 choice technology {
                   description
                     "Data plane technology types.";
                   case otn {
-                    choice slice-bandwidth {
+                    choice nrp-bandwidth {
                       description
-                        "Bandwidth specification for OTN slices.";
+                        "Bandwidth specification for an OTN NRP.";
                       case containers {
                         uses l1-types:otn-link-bandwidth;
                       }
@@ -933,28 +930,11 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                           type uint32;
                           description
                             "Number of OTN tributary slots allocated
-                             for the slice.";
+                             for the NRP.";
                         }
                       }
                     }
                   }
-                }
-                leaf sliced-link-ref {
-                  type leafref {
-                    path "../../../../../nt:link/nt:link-id";
-                  }
-                  config false;
-                  description
-                    "Relative reference to virtual links generated from
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 17]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
-                     this TE link.";
                 }
               }
             }
@@ -966,6 +946,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
          */
         augment "/nw:networks/nw:network/nt:link/tet:te/"
               + "tet:te-link-attributes" {
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 17]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
           when "../../../nw:network-types/tet:te-topology/"
              + "otnt:otn-topology" {
             description
@@ -973,8 +961,8 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                OTN topology type.";
           }
           description
-            "Augment OTN TE link attributes with slicing profile.";
-          uses otn-link-slice-profile;
+            "Augment OTN TE link attributes with NRP profile.";
+          uses otn-link-nrp-profile;
         }
       }
    <CODE ENDS>
@@ -1003,13 +991,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
    *  Bandwidth specification in the type and number of ODU containers.
 
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 18]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
 5.2.2.  NBI YANG Model Tree for OTN slice
 
    module: ietf-otn-slice
@@ -1021,6 +1002,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
           |  +--rw odu-pm-objective* [duration pm-type]
           |     +--rw duration        identityref
           |     +--rw pm-type         identityref
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 18]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
           |     +--rw pm-threshold?   uint64
           +--rw odulist* [odu-type]
              +--rw odu-type    identityref
@@ -1058,14 +1047,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
           |     +--rw duration        identityref
           |     +--rw pm-type         identityref
           |     +--rw pm-threshold?   uint64
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 19]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
           +--rw odulist* [odu-type]
              +--rw odu-type    identityref
              +--rw number?     uint16
@@ -1077,6 +1058,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
           |  +--rw odu-pm-objective* [duration pm-type]
           |     +--rw duration        identityref
           |     +--rw pm-type         identityref
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 19]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
           |     +--rw pm-threshold?   uint64
           +--rw odulist* [odu-type]
              +--rw odu-type    identityref
@@ -1114,14 +1103,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
        +--rw otn
           +--rw odu-signal-quality
           |  +--rw odu-pm-objective* [duration pm-type]
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 20]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
           |     +--rw duration        identityref
           |     +--rw pm-type         identityref
           |     +--rw pm-threshold?   uint64
@@ -1133,6 +1114,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                /ietf-nss:connectivity-construct/ietf-nss:type
                /ietf-nss:a2a/ietf-nss:a2a-sdp/ietf-nss:slo-sle-policy
                /ietf-nss:custom/ietf-nss:service-slo-sle-policy
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 20]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
                /ietf-nss:slo-policy:
        +--rw otn
           +--rw odu-signal-quality
@@ -1170,14 +1159,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
           prefix "l1-types";
           reference
             "draft-ietf-ccamp-layer1-types-18:
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 21]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
              RFC ZZZZ: A YANG Data Model for Layer 1 Types";
         }
 
@@ -1188,6 +1169,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
              RFC VVVV: A YANG Data Model for the RFC 9543 Network Slice
              Service";
         }
+
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 21]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
         import ietf-ns-topo {
           prefix "ns-topo";
@@ -1226,14 +1215,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
            authors of the code.  All rights reserved.
 
            Redistribution and use in source and binary forms, with or
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 22]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
            without modification, is permitted pursuant to, and subject
            to the license terms contained in, the Revised BSD License
            set forth in Section 4.c of the IETF Trust's Legal Provisions
@@ -1245,6 +1226,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
         revision "2025-07-03" {
           description
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 22]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
             "Latest revision of NBI YANG model for OTN slicing.";
           reference
             "draft-ietf-ccamp-yang-otn-slicing-09: Framework and Data
@@ -1282,14 +1271,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
           base odu-tca-threshold-type;
           description
             "ODU Severely Errored Seconds (SES) threshold";
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 23]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
         }
 
         identity odu-uas {
@@ -1301,6 +1282,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
         identity odu-ber {
           base odu-tca-threshold-type;
           description
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 23]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
             "ODU Bit Error Rate (BER) threshold";
         }
 
@@ -1338,14 +1327,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                 "List of ODU performance requirements.";
               leaf duration {
                 type identityref {
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 24]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
                   base pm-duration;
                 }
                 description
@@ -1357,6 +1338,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                 }
                 description
                   "ODU PM metric type.";
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 24]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
               }
 
               leaf pm-threshold {
@@ -1394,14 +1383,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
               OTN technology-specific SLO/SLE policy attributes.";
 
           uses otn-slice-slo-policy;
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 25]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
         }
 
         /* slice augments */
@@ -1413,6 +1394,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                 "/ietf-nss:slo-policy" {
           description
             "Augment IETF network slice services to include technology-
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 25]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
              specific SLO/SLE policy for connectivity-based OTN
              slices.";
 
@@ -1450,14 +1439,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                 "/nt:termination-point" +
                 "/ns-topo:slo-sle-policy" +
                 "/ns-topo:custom" +
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 26]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
                 "/ns-topo:service-slo-sle-policy" +
                 "/ns-topo:slo-policy" {
           when "../../../../nw:network-types/ns-topo:network-slice" {
@@ -1469,6 +1450,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
         }
 
         /* network link augments */
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 26]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
         augment "/nw:networks/nw:network/nt:link" +
                 "/ns-topo:slo-sle-policy" +
                 "/ns-topo:custom" +
@@ -1506,14 +1495,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                 "/ietf-nss:custom" +
                 "/ietf-nss:service-slo-sle-policy" +
                 "/ietf-nss:slo-policy" {
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 27]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
           description
             "Augment IETF network slice services to include technology-
              specific SLO/SLE policy for connectivity-constructs within
@@ -1525,6 +1506,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
                 "/ietf-nss:slice-service" +
                 "/ietf-nss:connection-groups" +
                 "/ietf-nss:connection-group" +
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 27]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
                 "/ietf-nss:connectivity-construct" +
                 "/ietf-nss:type" +
                 "/ietf-nss:a2a" +
@@ -1555,21 +1544,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    conflicts.  The access to slice management functions will only be
    permitted after successful security checks.
 
-
-
-
-
-
-
-
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 28]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
 7.  Security Considerations
 
    The YANG module specified in this document defines a schema for data
@@ -1588,6 +1562,14 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    There are a number of data nodes defined in this YANG module that are
    writable/creatable/deletable (i.e., config true, which is the
    default).  These data nodes may be considered sensitive or vulnerable
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 28]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
+
    in some network environments.  Write operations (e.g., edit-config)
    to these data nodes without proper protection can have a negative
    effect on network operations.  Considerations in Section 8 of
@@ -1617,15 +1599,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    This document registers two YANG modules in the YANG Module Names
    registry [RFC6020].
 
-
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 29]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
       name: ietf-otn-slice
       namespace: urn:ietf:params:xml:ns:yang:ietf-otn-slice
       prefix: otns
@@ -1639,6 +1612,19 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 9.  References
 
 9.1.  Normative References
+
+
+
+
+
+
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 29]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
    [I-D.ietf-ccamp-layer1-types]
               Zheng, H. and I. Busi, "Common YANG Data Types for Layer 1
@@ -1667,21 +1653,13 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
               Liu, X., Contreras, L. M., Belotti, S., Guo, A., and I.
               Busi, "IETF Network Slice Topology YANG Data Model", Work
               in Progress, Internet-Draft, draft-ietf-teas-network-
-              slice-topology-yang-02, 21 July 2025,
+              slice-topology-yang-03, 23 January 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              network-slice-topology-yang-02>.
+              network-slice-topology-yang-03>.
 
    [I-D.ietf-teas-ns-controller-models]
               Contreras, L. M., Rokui, R., Tantsura, J., Wu, B., and X.
               Liu, "IETF Network Slice Controller and its Associated
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 30]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
               Data Models", Work in Progress, Internet-Draft, draft-
               ietf-teas-ns-controller-models-06, 20 October 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-
@@ -1691,9 +1669,18 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
               Saad, T., Gandhi, R., Liu, X., Beeram, V. P., and I.
               Bryskin, "A YANG Data Model for Traffic Engineering
               Tunnels, Label Switched Paths, and Interfaces", Work in
-              Progress, Internet-Draft, draft-ietf-teas-yang-te-40, 2
-              November 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-teas-yang-te-40>.
+              Progress, Internet-Draft, draft-ietf-teas-yang-te-42, 24
+              February 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-teas-yang-te-42>.
+
+
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 30]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
    [ITU-T-G.8201-Amd.1]
               ITU Telecommunication Standardization Sector (ITU-T),
@@ -1729,15 +1716,6 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
               Shell (SSH)", RFC 6242, DOI 10.17487/RFC6242, June 2011,
               <https://www.rfc-editor.org/info/rfc6242>.
 
-
-
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 31]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
    [RFC6991]  Schoenwaelder, J., Ed., "Common YANG Data Types",
               RFC 6991, DOI 10.17487/RFC6991, July 2013,
               <https://www.rfc-editor.org/info/rfc6991>.
@@ -1749,6 +1727,16 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/info/rfc8040>.
+
+
+
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 31]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -1779,6 +1767,11 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
               DOI 10.17487/RFC8795, August 2020,
               <https://www.rfc-editor.org/info/rfc8795>.
 
+   [RFC9731]  Lee, Y., Ed., Dhody, D., Ed., Ceccarelli, D., Bryskin, I.,
+              and B. Yoon, "A YANG Data Model for Virtual Network (VN)
+              Operations", RFC 9731, DOI 10.17487/RFC9731, March 2025,
+              <https://www.rfc-editor.org/info/rfc9731>.
+
    [TS.28.530-3GPP]
               3rd Generation Partnership Project (3GPP), "3GPP TS 28.530
               V15.1.0 Technical Specification Group Services and System
@@ -1787,14 +1780,19 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
               2018, <http://ftp.3gpp.org//Specs/
               archive/28_series/28.530/28530-f10.zip>.
 
-
-
-Guo, et al.               Expires 10 July 2026                 [Page 32]
-
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
-
-
 9.2.  Informative References
+
+
+
+
+
+
+
+
+Guo, et al.              Expires 30 August 2026                [Page 32]
+
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
+
 
    [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
               Makhijani, K., Contreras, L., and J. Tantsura, "A
@@ -1845,9 +1843,11 @@ Contributors
 
 
 
-Guo, et al.               Expires 10 July 2026                 [Page 33]
+
+
+Guo, et al.              Expires 30 August 2026                [Page 33]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    Dieter Beller
@@ -1901,9 +1901,9 @@ Authors' Addresses
 
 
 
-Guo, et al.               Expires 10 July 2026                 [Page 34]
+Guo, et al.              Expires 30 August 2026                [Page 34]
 
-Internet-Draft      Framework and YANG of OTN Slices        January 2026
+Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
    Yang Zhao
@@ -1957,4 +1957,4 @@ Internet-Draft      Framework and YANG of OTN Slices        January 2026
 
 
 
-Guo, et al.               Expires 10 July 2026                 [Page 35]
+Guo, et al.              Expires 30 August 2026                [Page 35]

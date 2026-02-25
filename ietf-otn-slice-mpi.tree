@@ -2,20 +2,18 @@ module: ietf-otn-slice-mpi
 
   augment /nw:networks/nw:network/nt:link/tet:te
             /tet:te-link-attributes:
-    +--rw (otn-slice-granularity)?
+    +--rw (otn-nrp-granularity)?
        +--:(link)
-       |  +--rw slice-id?   uint32
+       |  +--rw nrp-id?   uint32
        +--:(link-resource)
-          +--rw slices* [slice-id]
-             +--rw slice-id                  uint32
+          +--rw nrps* [nrp-id]
+             +--rw nrp-id                    uint32
              +--rw (technology)?
-             |  +--:(otn)
-             |     +--rw (slice-bandwidth)?
-             |        +--:(containers)
-             |        |  +--rw odulist* [odu-type]
-             |        |     +--rw odu-type    identityref
-             |        |     +--rw number?     uint16
-             |        +--:(time-slots)
-             |           +--rw otn-ts-num?   uint32
-             +--ro sliced-link-ref?
-                     -> ../../../../../nt:link/link-id
+                +--:(otn)
+                   +--rw (nrp-bandwidth)?
+                      +--:(containers)
+                      |  +--rw odulist* [odu-type]
+                      |     +--rw odu-type    identityref
+                      |     +--rw number?     uint16
+                      +--:(time-slots)
+                         +--rw otn-ts-num?   uint32

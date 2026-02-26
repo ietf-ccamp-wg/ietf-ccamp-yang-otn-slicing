@@ -87,7 +87,7 @@
       * Groupings
       */
 
-     grouping otn-link-nrp-profile {
+     grouping otn-nrp-profile {
        description
          "Profile of an OTN link Network Resource Partition (NRP).";
        choice otn-nrp-granularity {
@@ -109,7 +109,7 @@
              leaf nrp-id {
                type uint32;
                description
-                 "NRP identifier";
+                 "NRP link resource identifier.";
              }
              choice technology {
                description
@@ -150,6 +150,6 @@
        }
        description
          "Augment OTN TE link attributes with NRP profile.";
-       uses otn-link-nrp-profile;
+       uses otn-nrp-profile;
      }
    }

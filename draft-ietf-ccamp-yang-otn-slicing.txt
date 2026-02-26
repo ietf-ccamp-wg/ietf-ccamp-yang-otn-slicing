@@ -5,7 +5,7 @@
 CCAMP Working Group                                               A. Guo
 Internet-Draft                                    Futurewei Technologies
 Intended status: Standards Track                          L.M. Contreras
-Expires: 30 August 2026                                       Telefonica
+Expires: 31 August 2026                                       Telefonica
                                                               S. Belotti
                                                                    Nokia
                                                                 R. Rokui
@@ -16,7 +16,7 @@ Expires: 30 August 2026                                       Telefonica
                                                             China Mobile
                                                                   X. Liu
                                                                Alef Edge
-                                                        26 February 2026
+                                                        27 February 2026
 
 
             Framework and Data Model for OTN Network Slicing
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 1]
+Guo, et al.              Expires 31 August 2026                 [Page 1]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -63,7 +63,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 August 2026.
+   This Internet-Draft will expire on 31 August 2026.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 2]
+Guo, et al.              Expires 31 August 2026                 [Page 2]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -165,7 +165,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 3]
+Guo, et al.              Expires 31 August 2026                 [Page 3]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -221,7 +221,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 4]
+Guo, et al.              Expires 31 August 2026                 [Page 4]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -277,7 +277,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 5]
+Guo, et al.              Expires 31 August 2026                 [Page 5]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -333,7 +333,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 6]
+Guo, et al.              Expires 31 August 2026                 [Page 6]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -389,7 +389,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 7]
+Guo, et al.              Expires 31 August 2026                 [Page 7]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -445,7 +445,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 8]
+Guo, et al.              Expires 31 August 2026                 [Page 8]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -501,7 +501,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                 [Page 9]
+Guo, et al.              Expires 31 August 2026                 [Page 9]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -557,7 +557,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 10]
+Guo, et al.              Expires 31 August 2026                [Page 10]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -613,7 +613,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 11]
+Guo, et al.              Expires 31 August 2026                [Page 11]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -647,29 +647,29 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
    resource partition with ODU time slots for tracking slice resource
    associations.  The OTN-SC may then push the topology with configured
    NRP identifiers to the subtended MDSC or PNC using the MPI model
-   defined in this draft, and subsequently instantiate TE tunnels with
-   the appropriate NRP identifier.
+   defined in this draft, and subsequently instantiate TE tunnels
+   utilizing the related underlay link resources with the appropriate
+   NRP identifier.
 
    Alternatively, an OTN slice may be mapped to an NRP as an overlay
    abstract OTN TE topology on the underlay topology.  In this model,
-   the link resources allocated to the slice are encapsulated and
-   tracked within the abstract NRP topology.  Each link or port in the
-   NRP topology corresponds to resources reserved in the underlay
-   topology.  Multiple OTN slices may be mapped to the same NRP, while
-   any individual connectivity construct of a slice is mapped to only
-   one NRP, as per [RFC9543].  The resources of an NRP topology are
-   reserved and shared among all OTN slices mapped to that NRP.  The NRP
-   topology may be pushed directly to the subtended MDSC or PNC,
-   eliminating the need for configuring NRP identifiers when operating
-   on the underlay topology.
+   the link resources allocated to the slice are represented by the
+   abstract NRP topology, wherein each link or port in the NRP topology
+   is mapped to resources reserved in the underlay topology.  Multiple
+   OTN slices may be mapped to the same NRP, while any individual
+   connectivity construct of a slice is mapped to only one NRP, as per
+   [RFC9543].  The resources of an NRP topology are reserved and shared
+   among all OTN slices mapped to that NRP.  The NRP topology may be
+   pushed directly to the subtended MDSC or PNC, eliminating the need
+   for configuring NRP identifiers when operating on the underlay
+   topology.
 
    Figure 4 illustrates the relationship between OTN slices and NRP.
 
 
 
 
-
-Guo, et al.              Expires 30 August 2026                [Page 12]
+Guo, et al.              Expires 31 August 2026                [Page 12]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -725,7 +725,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 13]
+Guo, et al.              Expires 31 August 2026                [Page 13]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -741,14 +741,14 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
    used, and no additional modeling is required.  The model defined in
    this draft addresses the configuration of resource-based OTN slices,
    where the OTN-SC and the subtended network controller (MDSC or PNC)
-   share a common knowledge of the underlying virtual TE topology.  In
-   this case, the slice is configured by marking the relevant link
-   resources on the TE topology received from the MDSC or PNC with an
-   NRP identifier and OTN-specific resource attributes, such as the
-   number of ODU time slots or the type and quantity of ODU containers.
-   Based on the resources marked by the OTN-SC, the MDSC or PNC updates
-   the underlay TE topology by creating new TE links corresponding to
-   the reserved OTN resources, e.g., time slots or ODU containers, and
+   share a common knowledge of the underlying TE topology.  In this
+   case, the slice is configured by marking the relevant link resources
+   on the TE topology received from the MDSC or PNC with an NRP
+   identifier and OTN-specific resource attributes, such as the number
+   of ODU time slots or the type and quantity of ODU containers.  Based
+   on the resources marked by the OTN-SC, the MDSC or PNC updates the
+   underlay TE topology by creating new TE links corresponding to the
+   reserved OTN resources, e.g., time slots or ODU containers, and
    keeping those resources booked for the slice.
 
 5.1.2.  MPI YANG Model Tree
@@ -781,7 +781,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 14]
+Guo, et al.              Expires 31 August 2026                [Page 14]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -837,7 +837,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 15]
+Guo, et al.              Expires 31 August 2026                [Page 15]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -883,7 +883,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
          * Groupings
          */
 
-        grouping otn-link-nrp-profile {
+        grouping otn-nrp-profile {
           description
             "Profile of an OTN link Network Resource Partition (NRP).";
           choice otn-nrp-granularity {
@@ -893,7 +893,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 16]
+Guo, et al.              Expires 31 August 2026                [Page 16]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -913,7 +913,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
                 leaf nrp-id {
                   type uint32;
                   description
-                    "NRP identifier";
+                    "NRP link resource identifier.";
                 }
                 choice technology {
                   description
@@ -949,7 +949,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 17]
+Guo, et al.              Expires 31 August 2026                [Page 17]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -962,7 +962,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
           }
           description
             "Augment OTN TE link attributes with NRP profile.";
-          uses otn-link-nrp-profile;
+          uses otn-nrp-profile;
         }
       }
    <CODE ENDS>
@@ -1005,7 +1005,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 18]
+Guo, et al.              Expires 31 August 2026                [Page 18]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1061,7 +1061,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 19]
+Guo, et al.              Expires 31 August 2026                [Page 19]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1117,7 +1117,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 20]
+Guo, et al.              Expires 31 August 2026                [Page 20]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1173,7 +1173,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 21]
+Guo, et al.              Expires 31 August 2026                [Page 21]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1229,7 +1229,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 22]
+Guo, et al.              Expires 31 August 2026                [Page 22]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1285,7 +1285,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 23]
+Guo, et al.              Expires 31 August 2026                [Page 23]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1341,7 +1341,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 24]
+Guo, et al.              Expires 31 August 2026                [Page 24]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1397,7 +1397,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 25]
+Guo, et al.              Expires 31 August 2026                [Page 25]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1453,7 +1453,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 26]
+Guo, et al.              Expires 31 August 2026                [Page 26]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1509,7 +1509,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 27]
+Guo, et al.              Expires 31 August 2026                [Page 27]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1565,7 +1565,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 28]
+Guo, et al.              Expires 31 August 2026                [Page 28]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1621,7 +1621,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 29]
+Guo, et al.              Expires 31 August 2026                [Page 29]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1677,7 +1677,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 30]
+Guo, et al.              Expires 31 August 2026                [Page 30]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1733,7 +1733,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 31]
+Guo, et al.              Expires 31 August 2026                [Page 31]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1789,7 +1789,7 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 32]
+Guo, et al.              Expires 31 August 2026                [Page 32]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1845,7 +1845,7 @@ Contributors
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 33]
+Guo, et al.              Expires 31 August 2026                [Page 33]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1901,7 +1901,7 @@ Authors' Addresses
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 34]
+Guo, et al.              Expires 31 August 2026                [Page 34]
 
 Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
@@ -1957,4 +1957,4 @@ Internet-Draft      Framework and YANG of OTN Slices       February 2026
 
 
 
-Guo, et al.              Expires 30 August 2026                [Page 35]
+Guo, et al.              Expires 31 August 2026                [Page 35]

@@ -20,7 +20,7 @@ Expires: 4 September 2026                                     Telefonica
 
 
             Framework and Data Model for OTN Network Slicing
-                  draft-ietf-ccamp-yang-otn-slicing-10
+                  draft-ietf-ccamp-yang-otn-slicing-11
 
 Abstract
 

@@ -4,7 +4,7 @@ coding: utf-8
 title: Framework and Data Model for OTN Network Slicing
 
 abbrev: Framework and YANG of OTN Slices
-docname: draft-ietf-ccamp-yang-otn-slicing-10
+docname: draft-ietf-ccamp-yang-otn-slicing-11
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
@@ -168,9 +168,9 @@ Please replace ZZZZ with the RFC number assigned to {{!I-D.ietf-ccamp-layer1-typ
 Please remove this note.
 
 ## Definition of OTN Slice
-   An OTN slice is an OTN virtual network topology connecting a number
+   An OTN slice is an an RFC 9543 Network Slice connecting a number
    of OTN endpoints using a set of shared or dedicated OTN network resources to
-   satisfy specific service level objectives (SLOs).
+   satisfy specific service level objectives (SLOs) and Service Level Expectations (SLEs).
 
    An OTN slice is a technology-specific realization of the RFC 9543 network slice service 
    {{?RFC9543}} in the OTN domain, with the
@@ -320,13 +320,13 @@ Please remove this note.
    an OTN slice to provide connectivity between specified endpoints, an OTN slice 
    can be abstracted as a set of endpoint-to-endpoint links, with each link formed 
    by an end-to-end tunnel across the underlying OTN networks. The resources
-   associated with each link of the slice is reserved and commissioned in the underlying
+   associated with each link of the slice are reserved and commissioned in the underlying
    physical network upon the completion of configuring the OTN slice and all the 
    links are active. 
    
    An OTN slice can also be abstracted as an abstract topology when the customer requests
    the slice to share resources between multiple endpoints and to use the resources on demand.
-   The abstract topology may consist of virtual nodes and virtual links, and their associated
+   The abstract topology may consist of virtual nodes and virtual links{{!RFC9731}}, and their associated
    resources are reserved but not commissioned across the underlying OTN networks. The 
    customer can later commission resources within the slice dynamically using the NBI provided
    by the service provider. An OTN slice could use abstract topology to connect endpoints with 
@@ -476,57 +476,50 @@ shall support configuring an OTN slice with both options.
 
 {{?RFC9543}} introduces a mechanism for an RFC 9543 network slice controller to realize network slices by constructing Network Resource Partitions (NRP). A NRP is a collection of resources identified in the underlay network to facilitate the mapping of network slices onto available network resources. An NRP is a scope view of a topology and may be considered as a topology in its own right. Thus, in traffic-engineered (TE) networks including OTN, an NRP may be simply represented as an abstract TE topology defined by {{!RFC8795}}. For OTN networks, An NRP may be represented as an abstract OTN topology defined by {{!I-D.ietf-ccamp-otn-topo-yang}}.
 
-The NRP may be used to address the scalability issues where there may be considerable numbers of control and data plane states required to be stored and programmed if network slices are mapped directly to the underlay topology. NRP is internal to a network slice controller, and use of NRPs is optional yet could benefit a network slice realization in large-scale networks, including OTN networks. 
+The NRP can be used to address scalability challenges that arise when network slices are mapped directly onto the underlay topology, where a large number of control-plane and data-plane states may otherwise need to be instantiated and maintained for each slice. An NRP is internal to the network slice controller, and its use is optional and particularly in OTN transport networks, where resources are already physically partitioned into time slots with corarse granularity than the resources considered in L2-L3 networks. Nevertheless, NRPs can provide significant benefits for slice realization in large-scale environments, including also OTN networks.
 
 For connectivity-based OTN slices, a connection within an OTN slice is typically realized by an OTN tunnel in the underlay topology and resources are reserved by the tunnel, thus use of NRP is optional in this case.
 
-For resource-based OTN slices, the OTN-SC may map an OTN slice directly onto the underlay TE topology presented by the subtended network controller (MDSC or PNC) without creating NRP topologies. Due to the need for reserving resources, the OTN-SC needs to color corresponding link resources of the underlay topology with a slice identifier and maintain the coloring to keep track of the mapping of OTN slices. The OTN-SC may push the colored topology to the subtended MDSC or PNC using the MPI model defined in this draft.
+For resource-based OTN slices, the OTN-SC maps an OTN slice directly onto the underlay TE topology exposed by the subtended controller (MDSC or PNC) without creating separate NRP topology instances. In this case, the OTN-SC configures NRP identifiers on the relevant underlay link resources. An NRP identifier represents a resource partition with ODU time slots for tracking slice resource associations. The OTN-SC may then push the topology with configured NRP identifiers to the subtended MDSC or PNC using the MPI model defined in this draft, and subsequently instantiate OTN TE tunnels utilizing the related underlay link resources with the appropriate NRP identifier.
 
-Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE topology on top of the underlay topology. The corresponding link resources allocated to the slice is encapsulated in and tracked by the abstract topology, and a given link or port in the NRP topology represents resources that are reserved in the underlay topology. Multiple OTN slices may be mapped to the same NRP, and a single connectivity construct of the slice may be mapped to only one NRP, as per {{?RFC9543}}. The resources of an NRP topology are reserved and shared by all the OTN slices mapped to this NRP, and the NRP topology may be pushed directly to the subtended MDSC or PNC, thus eliminating the need for link coloring if using the underlay topology.
+Multiple OTN slices may be mapped to the same NRP, while any individual connectivity construct of a slice is mapped to only one NRP, as specified in {{?RFC9543}}. The resources of an NRP topology are reserved and shared among all OTN slices mapped to the same NRP.
 
-{{fig-otn-sc-nrp}} illustrates the relationship between OTN slices and NRP.
+{{fig-otn-sc-nrp}} illustrates the relationship between OTN slices and NRPs. In this example, Slice 1 and Slice 2 are associated with NRP-1, while Slice 3 is associated with NRP-2. The relevant link resources allocated to each NRP are marked with their corresponding NRP identifiers.
 
 ~~~~
-        /---------------/      |            /---------------/
-       /  --     --    /       |           /  --     --    /
-      /  |N1|---|N3|  /---/    |          /  |N2|   |N3|  /
-     /    --\    --  /   /     |         /    --     --  /
-    /        \--    /   /      |        /       \ --/   /
-   /         |N2|  /   /       |       /         |N4|  /
-  / Slice 1   --  /   /        |      / Slice 2   --  /
- /------------<--/   /         |     /-----------<---/
-    / Slice 3 <     /          |                 <
-   /--------- <-<--/           |                 <
-+-------------<-<--------------V-----------------<------------+
-|          /--<-<------------/             /-----<-----------/|
-|         / /--\     /--\   /             /          /--\   / |
-|        / |NE1 |---|NE2 | /             /          |NE2 | /  |
-|       /   \--/\  . \--/ /             /            \--/ /   |
-|      /       ..\ ........            /              /. /    |
-|     /        . /--\   / .           / /--\     /--\/ ./     |
-|    /         .|NE4 | /  .          / |NE3 |---|NE4 | .      |
-|   /          . \--/ /   .         /   \--/  .  \--/ /.      |
-|  /  NRP Topology 1 /    .        /  NRP Topology 2 / .      |
-| /------------.----/     .       /-----------.-----/  .      |
-|              .......    .                   .        .      |
-|             /------.----.-----------------/ .        .      |
-|            / /--\  .    .     /--\       /  .        .      |
-|           / |NE1 |-.----v----|NE2 |     /   .        .      |
-|          /   ---/\ .         /\--/     /    .        .      |
-|         /   /     \v        /<........................      |
-|        / /-/\      \ /--\  /         /      .               |
-|       / |NE3 |------|NE4 |/         /       .               |
-|      /   \--/  ^     \--/          /        .               |
-|     /  Underlay.OTN TE Topology   /         .               |
-|    /-----------.-----------------/          .               |
-|                ..............................     OTN-SC    |
-+-------------------------------------------------------------+
+        /---------------/                   /---------------/
+       /  --     --    /                   /  --     --    /
+      /  |N1|---|N3|  /---/               /  |N1|   |N3|  /
+     /    --\    --  /   /               /    --     --  /
+    /        \--    /   /               /       \ --/   /
+   /         |N2|  /   /               /         |N2|  /
+  / Slice 1   --  /   /               / Slice 3   --  /
+ /------------|--/   /               /-----------|---/
+    / Slice 2 |     /                            |
+   /--------- |-|--/                             |
++-------------v-v--------------------------------v--------+
+|          (NRP-1)                            (NRP-2)     |
+|                                                         |
+|             /-----------------------------/             |
+|            / /--\    NRP-1    /--\       /              |
+|           / |NE1 |-----------|NE2 |     /               |
+|          /   ---/\           /\--/     /                |
+|         /   /     \NRP-1    /NRP-2    /                 |
+|        / /-/\      \ /--\  /         /                  |
+|       / |NE3 |------|NE4 |/         /                   |
+|      /   \--/  NRP-2 \--/          /                    |
+|     /                             /                     |
+|    / Underlay OTN TE Topology    /                      |
+|   /  with NRP identifier marking/                       |
+|  /-----------------------------/                        |
+|                      OTN-SC                             |
++---------------------------------------------------------+
                  |                         ^
                  |MPI                      |MPI
-+----------------V--------------------------------------------+
-|                                                             |
-|                       OTN MDSC/PNC                          |
-+-------------------------------------------------------------+
++----------------V----------------------------------------+
+|                                                         |
+|                       OTN MDSC/PNC                      |
++---------------------------------------------------------+
 ~~~~
 {: #fig-otn-sc-nrp title="Mapping OTN Slices to NRP"}
 
@@ -536,16 +529,11 @@ Alternatively, an OTN slice may be mapped to a NRP as an overlay abstract OTN TE
 
 ### MPI YANG Model Overview
 
-   For the configuration of connectivity-based OTN slices, existing models such as 
-   the TE tunnel interface {{!I-D.ietf-teas-yang-te}} may be used and no addition is 
-   needed. This model is addressing the case for configuring resource-based OTN slices,
-   where the model permits to reserve resources exploiting the common knowledge of an underlying 
-   virtual topology between the OTN-SC and the subtended network controller (MDSC or PNC). The slice
-   is configured by marking corresponding link resources on the TE topology received from the 
-   underlying MDSC or PNC with a slice identifier and OTN-specific resource requirements, 
-   e.g. the number of ODU time slots or the type/number of ODU containers. The MDSC or PNC, based on the 
-   marked resources by the OTN-SC, will update the underlying TE topology with new TE link for each of 
-   the colored links to keep booked the reserved OTN resources e.g. time slots or ODU containers.
+   For the realization of connectivity-based OTN slices, the OTN-SC configures an OTN tunnel using the OTN tunnel model and specifies the associated NRP identifier.
+
+   For the realization of resource-based OTN slices, the OTN-SC configures the NRP by marking the relevant link resources on the TE topology received from the MDSC or PNC with an NRP identifier, together with the appropriate OTN-specific resource attributes, such as the number of ODU time slots or the type and quantity of ODU containers.
+
+   Based on the resources marked by the OTN-SC, the MDSC or PNC updates the underlay TE topology by creating new TE links corresponding to the reserved OTN resources and keeping those resources booked for the slice.
 
 ### MPI YANG Model Tree
 

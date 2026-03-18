@@ -104,7 +104,7 @@ normative:
     author:
       org: ITU Telecommunication Standardization Sector (ITU-T)
     date: December 2021
-    seriesinfo: ITU-T G.8201 (2011) Amd. 1 
+    seriesinfo: ITU-T G.8201 (2011) Amd. 1
     target: https://www.itu.int/rec/T-REC-G.8201
 
 --- abstract
@@ -183,22 +183,22 @@ Please remove this note.
    of OTN endpoints using a set of shared or dedicated OTN network resources to
    satisfy specific service level objectives (SLOs) and Service Level Expectations (SLEs).
 
-   An OTN slice is a technology-specific realization of the RFC 9543 network slice service 
+   An OTN slice is a technology-specific realization of the RFC 9543 network slice service
    {{?RFC9543}} in the OTN domain, with the
-   capability of configuring slice resources in the term of OTN technologies. 
-   Therefore, all the terms and definitions concerning network slicing as 
+   capability of configuring slice resources in the term of OTN technologies.
+   Therefore, all the terms and definitions concerning network slicing as
    defined in {{?RFC9543}} apply to OTN slicing.
-   
-   An OTN slice can span multiple OTN administrative domains, encompassing 
-   access links, intra-domain paths, and inter-domain links. 
+
+   An OTN slice can span multiple OTN administrative domains, encompassing
+   access links, intra-domain paths, and inter-domain links.
    An OTN slice may include multiple endpoints, each associated with a set of physical
-   or logical resources, e.g. optical port or time slots, at the termination point (TP) of 
-   an access link or inter-domain link at an OTN provider edge (PE) equipment. 
+   or logical resources, e.g. optical port or time slots, at the termination point (TP) of
+   an access link or inter-domain link at an OTN provider edge (PE) equipment.
 
    An end-to-end OTN slice may be composed of multiple OTN segment slices in
-   a hierarchical or sequential (or stitched) combination. 
+   a hierarchical or sequential (or stitched) combination.
 
-   {{fig-otn-slice}} illustrates the scope of OTN slices in multi-domain 
+   {{fig-otn-slice}} illustrates the scope of OTN slices in multi-domain
    environment.
 
 ~~~~
@@ -225,13 +225,13 @@ Please remove this note.
 ~~~~
 {: #fig-otn-slice title="OTN Slice"}
 
-   OTN slices may be pre-configured by the management plane and presented to 
-   the customer via the northbound interface (NBI), or be dynamically 
-   provisioned by a higher layer slice controller, e.g., an RFC 9543 network slice 
-   controller (NSC) through the NBI. The OTN slice is 
+   OTN slices may be pre-configured by the management plane and presented to
+   the customer via the northbound interface (NBI), or be dynamically
+   provisioned by a higher layer slice controller, e.g., an RFC 9543 network slice
+   controller (NSC) through the NBI. The OTN slice is
    provided by a service provider to a customer to be used as though it was part
    of the customer's own networks.
-         
+
 # Use Cases for OTN Network Slicing
 
 ## Leased Line Services with OTN
@@ -288,7 +288,7 @@ Please remove this note.
    resources flexibly, just like they are self-constructed. Therefore,
    the purchaser is not only provided with a network slice, but also the
    full set of functionalities for operating and maintaining the network
-   slice.  The purchaser also expects to, flexibly and independently, 
+   slice.  The purchaser also expects to, flexibly and independently,
    schedule and maintain physical resources to support their own
    end-to-end automation using both leased and self-constructed network
    resources.
@@ -314,13 +314,13 @@ Please remove this note.
 
    In an end-to-end network slicing scenario such as 5G network slicing
    {{TS.28.530-3GPP}}, an RFC 9543 network slice {{?RFC9543}}
-   provides the required connectivity between other different segments 
-   of an end-to-end network slice, such as the Radio Access Network 
-   (RAN) and the Core Network (CN) segments, with a specific 
-   performance commitment. An RFC 9543 network slice could be composed of 
-   network slices from multiple technological and administrative 
+   provides the required connectivity between other different segments
+   of an end-to-end network slice, such as the Radio Access Network
+   (RAN) and the Core Network (CN) segments, with a specific
+   performance commitment. An RFC 9543 network slice could be composed of
+   network slices from multiple technological and administrative
    domains. An RFC 9543 network slice can be realized by using or combining
-   multiple underlying OTN slices with OTN resources, e.g., ODU time 
+   multiple underlying OTN slices with OTN resources, e.g., ODU time
    slots or ODU containers, to achieve end-to-end slicing across the transport
    domain.
 
@@ -328,25 +328,25 @@ Please remove this note.
 
    OTN slices may be abstracted differently depending on the requirement contained
    in the configuration provided by the slice customer. Whereas the customer requests
-   an OTN slice to provide connectivity between specified endpoints, an OTN slice 
-   can be abstracted as a set of endpoint-to-endpoint links, with each link formed 
+   an OTN slice to provide connectivity between specified endpoints, an OTN slice
+   can be abstracted as a set of endpoint-to-endpoint links, with each link formed
    by an end-to-end tunnel across the underlying OTN networks. The resources
    associated with each link of the slice are reserved and commissioned in the underlying
-   physical network upon the completion of configuring the OTN slice and all the 
-   links are active. 
-   
+   physical network upon the completion of configuring the OTN slice and all the
+   links are active.
+
    An OTN slice can also be abstracted as an abstract topology when the customer requests
    the slice to share resources between multiple endpoints and to use the resources on demand.
    The abstract topology may consist of virtual nodes and virtual links{{!RFC9731}}, and their associated
-   resources are reserved but not commissioned across the underlying OTN networks. The 
+   resources are reserved but not commissioned across the underlying OTN networks. The
    customer can later commission resources within the slice dynamically using the NBI provided
-   by the service provider. An OTN slice could use abstract topology to connect endpoints with 
-   shared resources to optimize the resource utilization, and connections can be activated 
+   by the service provider. An OTN slice could use abstract topology to connect endpoints with
+   shared resources to optimize the resource utilization, and connections can be activated
    within the slice as needed.
-    
-   It is worth noting that those means to abstract an OTN slice are similar to the Virtual 
+
+   It is worth noting that those means to abstract an OTN slice are similar to the Virtual
    Network (VN) abstraction defined for higher-level interfaces in {{!RFC8453}}, in which context
-   a connectivity-based slice corresponds to Type 1 VN and a resource-based slice corresponds to 
+   a connectivity-based slice corresponds to Type 1 VN and a resource-based slice corresponds to
    Type 2 VN, respectively.
 
    A particular resource in an OTN network, such as a port or link, may be
@@ -360,7 +360,7 @@ Please remove this note.
       share the same link by allocating different OTN tributary slots in
       different granularities.
 
-   Furthermore, an OTN switch is typically fully non-blocking switching 
+   Furthermore, an OTN switch is typically fully non-blocking switching
    at the lowest ODU container granularity, it is
 desirable to specify just the total number of ODU containers in the
 lowest granularity (e.g. ODU0), when configuring tributary-slot based
@@ -374,42 +374,42 @@ network maintenance considerations. Therefore, an OTN slice controller
 shall support configuring an OTN slice with both options.
 
    An OTN slice controller (OTN-SC) is a logical function responsible for
-   the life-cycle management of OTN slices instantiated within the 
-   corresponding OTN network domains. The OTN-SC provides technology-specific 
-   interfaces at its northbound (OTN-SC NBI) to allow a higher-layer slice 
-   controller, such as an RFC 9543 network slice controller (NSC) or an orchestrator, 
-   to request OTN slices with OTN-specific 
-   requirements. The OTN-SC interfaces at the southbound using the MDSC-to-PNC 
+   the life-cycle management of OTN slices instantiated within the
+   corresponding OTN network domains. The OTN-SC provides technology-specific
+   interfaces at its northbound (OTN-SC NBI) to allow a higher-layer slice
+   controller, such as an RFC 9543 network slice controller (NSC) or an orchestrator,
+   to request OTN slices with OTN-specific
+   requirements. The OTN-SC interfaces at the southbound using the MDSC-to-PNC
    interface (MPI) with a Physical Network Controller (PNC) or Multi-Domain Service Orchestrator (MDSC),
-   as defined in the ACTN control framework {{!RFC8453}}. The logical function 
-   within the OTN-SC is responsible for translating the OTN slice requests 
-   into concrete slice realization which can be understood and 
+   as defined in the ACTN control framework {{!RFC8453}}. The logical function
+   within the OTN-SC is responsible for translating the OTN slice requests
+   into concrete slice realization which can be understood and
    provisioned at the southbound by the PNC or MDSC.
-   
-   The presence of OTN-SC provides multiple options for a high-level slice controller 
+
+   The presence of OTN-SC provides multiple options for a high-level slice controller
    or an orchestrator to configure and realize slicing in OTN networks, depending on
    whether a customer's slice request is technology agnostic or technology specific:
-    
+
    Option 1\[opt.1]: An IETF NSC receives a technology-agnostic slice request from the IETF NSC NBI and
    realizes full or part of the slice in OTN networks directly through MPI provided by
-   the PNC or MDSC. The IETF NSC is responsible for mapping a technology-agnostic slicing request 
+   the PNC or MDSC. The IETF NSC is responsible for mapping a technology-agnostic slicing request
    into an OTN technology-specific realization. In this option, the OTN-SC is not used.
-   
+
    Option 2\[opt.2]: An IETF NSC receives a technology-agnostic slice request from the IETF NSC NBI and delegates the
    request to the OTN-SC through the OTN-SC NBI, which is OTN technology specific. The OTN-SC in turn realizes the slice in single or multi domain OTN networks by working with the underlying PNC or MDSC. In this option, the OTN-SC is considered as a realization of IETF NSC, i.e.,
    an NS realizer as per {{!I-D.ietf-teas-ns-controller-models}},
-   when the underlying network is OTN. The OTN-SC is also a subordinate slice controller of the RFC 9543 NSC, which 
+   when the underlying network is OTN. The OTN-SC is also a subordinate slice controller of the RFC 9543 NSC, which
    is consistent with the hierarchical control of slices specified by {{?RFC9543}}.
-   
-   Option 3\[opt.3]: An OTN-aware orchestrator may request an OTN technology-specific slice with OTN-specific SLOs through the 
+
+   Option 3\[opt.3]: An OTN-aware orchestrator may request an OTN technology-specific slice with OTN-specific SLOs through the
    OTN-SC NBI to the OTN-SC. The OTN-SC in turn realizes the slice in single or multi domain OTN networks by working with the underlying PNC or MDSC
-   
+
    An OTN slice may be realized by using standard MPI interfaces, control plane, network management system (NMS) or any other proprietary interfaces as needed. Examples of such interfaces include the abstract TE topology {{!RFC8795}}, TE tunnel {{!I-D.ietf-teas-yang-te}},L1VPN{{!RFC4847}}, or Netconf/YANG based interfaces such as OpenConfig. Some of these interfaces, such as the TE tunnel model, are suitable for creating connectivity-based OTN slices which represent a slice as a set of TE tunnels, while other interfaces such as the TE topology model are more suitable for creating resource-based OTN slices which represent a slice as a topology.
-   
+
    The OTN-SC NBI is a technology-specific interface that augments the IETF NSC NBI, which is technology-
-   agnostic. 
-   
-   {{fig-slice-interfaces}} illustrates the OTN slicing control hierarchy 
+   agnostic.
+
+   {{fig-slice-interfaces}} illustrates the OTN slicing control hierarchy
    , the positioning of the OTN slicing interfaces as well as the options for OTN slice configuration.
 
 
@@ -419,21 +419,21 @@ shall support configuring an OTN slice with both options.
                       +--------|-----------+
                                | CMI
        +-----------------------+--------------------------------+
-       |          Orchestrator / E2E Slice Controller           | 
+       |          Orchestrator / E2E Slice Controller           |
        +------------+-----------------------------+-------------+
                     |                             | NSC-NBI
                     |       +---------------------+-------------+
                     |       | RFC 9543 Network Slice Controller |
                     |       +-----+---------------+-------------+
                     | opt.3       | opt.2         | opt.1
-                    | OTN-SC NBI  |OTN-SC NBI     |               
+                    | OTN-SC NBI  |OTN-SC NBI     |
        +------------+-------------+--------+      |
        |               OTN-SC              |      |
-       +--------------------------+--------+      |      
-                                  | MPI           | MPI                           
-       +--------------------------+---------------+------------+ 
-       |                         PNC                           | 
-       +--------------------------+----------------------------+ 
+       +--------------------------+--------+      |
+                                  | MPI           | MPI
+       +--------------------------+---------------+------------+
+       |                         PNC                           |
+       +--------------------------+----------------------------+
                                   | SBI
                       +-----------+----------+
                       |OTN Physical Network  |
@@ -445,13 +445,13 @@ shall support configuring an OTN slice with both options.
    OTN-SC functionalities may be recursive such that a higher-level
    OTN-SC may designate the creation of OTN slices to a lower-level
    OTN-SC in a recursive manner. This scenario may apply to the
-   creation of OTN slices in multi-domain OTN networks, where 
+   creation of OTN slices in multi-domain OTN networks, where
    multiple domain-wide OTN slices provisioned by lower-layer
    OTN-SCs are stitched to support a multi-domain OTN slice
    provisioned by the higher-level OTN-SC.  Alternatively, the OTN-SC
-   may interface with an MDSC, which in turn interfaces with multiple 
-   PNCs through the MPI to realize OTN slices in multi-domain OTN networks 
-   without OTN-SC recursion. 
+   may interface with an MDSC, which in turn interfaces with multiple
+   PNCs through the MPI to realize OTN slices in multi-domain OTN networks
+   without OTN-SC recursion.
    {{fig-otn-sc-recursion}} illustrates both options for OTN slicing
    in multi-domain.
 
@@ -471,8 +471,8 @@ shall support configuring an OTN slice with both options.
 ~~~~
 {: #fig-otn-sc-recursion title="OTN-SC for multi-domain"}
 
-   OTN-SC functionalities are logically independent and may be deployed in 
-   different combinations to cater to the realization needs. In reference to the 
+   OTN-SC functionalities are logically independent and may be deployed in
+   different combinations to cater to the realization needs. In reference to the
    ACTN control framework {{!RFC8453}}, an OTN-SC may be deployed
 
    - as an independent network function;
@@ -480,7 +480,7 @@ shall support configuring an OTN slice with both options.
    - together with a Physical Network Controller (PNC) for single-domain
       or with a Multi-Domain Service Orchestrator (MDSC)for multi-domain;
 
-   - together with a higher-level network slice controller to support 
+   - together with a higher-level network slice controller to support
       end-to-end network slicing;
 
 # Realizing OTN Slices
@@ -568,19 +568,19 @@ Multiple OTN slices may be mapped to the same NRP, while any individual connecti
 
    The YANG model for OTN-SC NBI is OTN-technology specific, but shares many
    common constructs and attributes with the common network slicing YANG model
-   defined in {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}. Furthermore, the 
+   defined in {{!I-D.ietf-teas-ietf-network-slice-nbi-yang}}. Furthermore, the
    OTN-SC NBI YANG is expected to support both connectivity-based
    and resource-based slice configuration, which is likely a common requirement for
    supporting slicing at other transport network layers, e.g. WDM or MPLS(-TP).
-   
+
    The OTN slicing model augments the common network slicing YANG model by extending
    OTN technology-specific SLO and SLE attributes which can be requested by OTN-aware
-   customers and allows the customer to specify desired OTN signal quality. 
+   customers and allows the customer to specify desired OTN signal quality.
    These attributes include:
-   
+
    - The performance objective for Optical Data Unit (ODU) containers as defined in
      {{ITU-T-G.8201-Amd.1}}.
-   
+
    - Bandwidth specification in the type and number of ODU containers.
 
 ### NBI YANG Model Tree for OTN slice
@@ -597,8 +597,8 @@ Multiple OTN slices may be mapped to the same NRP, while any individual connecti
 {::include yang/ietf-otn-slice.yang}
    <CODE ENDS>
 ~~~~
-{: #fig-ietf-otn-slice-yang title="YANG model for transport network slice"}   
-  
+{: #fig-ietf-otn-slice-yang title="YANG model for transport network slice"}
+
 # Manageability Considerations
 
    To ensure the security and controllability of physical resource

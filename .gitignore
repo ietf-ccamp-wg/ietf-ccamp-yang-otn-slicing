@@ -22,3 +22,5 @@ draft-ietf-ccamp-yang-otn-slicing.xml
 package-lock.json
 report.xml
 !requirements.txt
+*.bash
+temp/

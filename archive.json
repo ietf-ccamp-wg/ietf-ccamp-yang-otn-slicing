@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-19T02:53:44.984106+00:00",
+  "timestamp": "2026-03-22T02:54:30.725368+00:00",
   "repo": "ietf-ccamp-wg/ietf-ccamp-yang-otn-slicing",
   "labels": [
     {
@@ -2722,6 +2722,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 59,
+      "id": "PR_kwDOFX_a5c7LvfB9",
+      "title": "Clean up repository, YANG code and I-D text",
+      "url": "https://github.com/ietf-ccamp-wg/ietf-ccamp-yang-otn-slicing/pull/59",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "The main branch has been directly updated to use the new template from Med:\r\n\r\nhttps://github.com/IETF-OPS-AD/I-D-with-yang-template\r\n\r\nThese changes cannot be done using PR but you can check the diff between the I-D generated from the main branch and the latest I-D submitted to IETF from the README of this repository or using this link:\r\n\r\nhttps://author-tools.ietf.org/api/iddiff?doc_1=draft-ietf-ccamp-yang-otn-slicing&url_2=https://ietf-ccamp-wg.github.io/ietf-ccamp-yang-otn-slicing/draft-ietf-ccamp-yang-otn-slicing.txt\r\n\r\nThis PR is proposing some clean-up in the repository structure, YANG data model and I-D text (fixing some idnits and aligning also with the guidelines in RFC 9907, formerly known as RFC 8407-bis)\r\n\r\nYou can check the diff between the I-D generated from this PR branch and the I-D generated from the main branch from the README of this repository or using this link:\r\n\r\nhttps://author-tools.ietf.org/api/iddiff?url_1=https://ietf-ccamp-wg.github.io/ietf-ccamp-yang-otn-slicing/draft-ietf-ccamp-yang-otn-slicing.txt&url_2=https://ietf-ccamp-wg.github.io/ietf-ccamp-yang-otn-slicing/clean-up/draft-ietf-ccamp-yang-otn-slicing.txt\r\n",
+      "createdAt": "2026-03-19T04:26:42Z",
+      "updatedAt": "2026-03-19T04:26:43Z",
+      "baseRepository": "ietf-ccamp-wg/ietf-ccamp-yang-otn-slicing",
+      "baseRefName": "main",
+      "baseRefOid": "a557412edd67aa28921cdb21186a031c52c52b39",
+      "headRepository": "ietf-ccamp-wg/ietf-ccamp-yang-otn-slicing",
+      "headRefName": "clean-up",
+      "headRefOid": "e01efab073338a6b7eea9706a705e0a8f5e1397c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }

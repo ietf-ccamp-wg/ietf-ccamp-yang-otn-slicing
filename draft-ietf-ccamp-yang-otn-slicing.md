@@ -34,8 +34,8 @@ author:
     email: luismiguel.contrerasmurillo@telefonica.com
   -
     name: Sergio Belotti
-    org: Nokia
-    email: Sergio.belotti@nokia.com
+    org: Individual
+    email: s.belotti.ietf@gmail.com
   -
     name: Reza Rokui
     org: Ciena

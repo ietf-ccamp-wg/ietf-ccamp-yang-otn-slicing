@@ -7,7 +7,7 @@ Internet-Draft                                    Futurewei Technologies
 Intended status: Standards Track                         L. M. Contreras
 Expires: 4 March 2027                                         Telefonica
                                                               S. Belotti
-                                                                   Nokia
+                                                              Individual
                                                                 R. Rokui
                                                                    Ciena
                                                                    Y. Xu
@@ -1631,8 +1631,8 @@ Authors' Addresses
 
 
    Sergio Belotti
-   Nokia
-   Email: Sergio.belotti@nokia.com
+   Individual
+   Email: s.belotti.ietf@gmail.com
 
 
    Reza Rokui

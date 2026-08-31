@@ -5,9 +5,9 @@
 Common Control and Measurement Plane                              A. Guo
 Internet-Draft                                    Futurewei Technologies
 Intended status: Standards Track                         L. M. Contreras
-Expires: 19 September 2026                                    Telefonica
+Expires: 4 March 2027                                         Telefonica
                                                               S. Belotti
-                                                                   Nokia
+                                                              Individual
                                                                 R. Rokui
                                                                    Ciena
                                                                    Y. Xu
@@ -16,7 +16,7 @@ Expires: 19 September 2026                                    Telefonica
                                                             China Mobile
                                                                   X. Liu
                                                                Alef Edge
-                                                           18 March 2026
+                                                          31 August 2026
 
 
             Framework and Data Model for OTN Network Slicing
@@ -69,7 +69,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 September 2026.
+   This Internet-Draft will expire on 4 March 2027.
 
 Copyright Notice
 
@@ -1427,49 +1427,49 @@ Table of Contents
    [I-D.ietf-ccamp-layer1-types]
               Zheng, H. and I. Busi, "Common YANG Data Types for Layer 1
               Networks", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-layer1-types-18, 23 February 2024,
+              ccamp-layer1-types-19, 16 June 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              layer1-types-18>.
+              layer1-types-19>.
 
    [I-D.ietf-ccamp-otn-topo-yang]
               Zheng, H., Busi, I., Liu, X., Belotti, S., and O. G. de
               Dios, "A YANG Data Model for Optical Transport Network
               Topology", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-otn-topo-yang-20, 7 November 2024,
+              ccamp-otn-topo-yang-21, 16 June 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              otn-topo-yang-20>.
+              otn-topo-yang-21>.
 
    [I-D.ietf-teas-ietf-network-slice-nbi-yang]
               Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
               "A YANG Data Model for the RFC 9543 Network Slice
               Service", Work in Progress, Internet-Draft, draft-ietf-
-              teas-ietf-network-slice-nbi-yang-25, 9 May 2025,
+              teas-ietf-network-slice-nbi-yang-26, 26 May 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              ietf-network-slice-nbi-yang-25>.
+              ietf-network-slice-nbi-yang-26>.
 
    [I-D.ietf-teas-network-slice-topology-yang]
               Liu, X., Contreras, L. M., Belotti, S., Guo, A., and I.
               Busi, "IETF Network Slice Topology YANG Data Model", Work
               in Progress, Internet-Draft, draft-ietf-teas-network-
-              slice-topology-yang-03, 23 January 2026,
+              slice-topology-yang-04, 30 July 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              network-slice-topology-yang-03>.
+              network-slice-topology-yang-04>.
 
    [I-D.ietf-teas-ns-controller-models]
               Contreras, L. M., Rokui, R., Tantsura, J., Wu, B., and X.
               Liu, "IETF Network Slice Controller and its Associated
               Data Models", Work in Progress, Internet-Draft, draft-
-              ietf-teas-ns-controller-models-06, 20 October 2025,
+              ietf-teas-ns-controller-models-08, 31 July 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-
-              controller-models-06>.
+              controller-models-08>.
 
    [I-D.ietf-teas-yang-te]
               Saad, T., Gandhi, R., Liu, X., Beeram, V. P., and I.
               Bryskin, "A YANG Data Model for Traffic Engineering
               Tunnels, Label Switched Paths, and Interfaces", Work in
-              Progress, Internet-Draft, draft-ietf-teas-yang-te-43, 28
-              February 2026, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-teas-yang-te-43>.
+              Progress, Internet-Draft, draft-ietf-teas-yang-te-44, 26
+              March 2026, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-teas-yang-te-44>.
 
    [ITU-T-G.8201-Amd.1]
               ITU Telecommunication Standardization Sector (ITU-T),
@@ -1631,8 +1631,8 @@ Authors' Addresses
 
 
    Sergio Belotti
-   Nokia
-   Email: Sergio.belotti@nokia.com
+   Individual
+   Email: s.belotti.ietf@gmail.com
 
 
    Reza Rokui
